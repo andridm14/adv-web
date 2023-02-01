@@ -9,11 +9,14 @@ $query = select("SELECT * FROM tb_pengerjaan");
 // cek data
 if ($query) {
 
-    $response = array(
-        'status'            => true,
-        'message'           => "Data GET Success",
-        'data pengerjaan'   => $query
-    );
+    $response = $query;
+
+    //tampil seluruh response data
+    // $response = array(
+    //     'status'            => true,
+    //     'message'           => "Data GET Success",
+    //     'data pengerjaan'   => $query
+    // );
 } else {
     $response = array(
         'status'    => false,

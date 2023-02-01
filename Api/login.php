@@ -27,7 +27,8 @@ if ($data) {
             'response' => true,
             'payload'  => array(
                 "nm_user"   => $data["nm_user"],
-                "username"  => $data["username"]
+                "username"  => $data["username"],
+                "role"      => $data["role"]
             )
         )
     );
