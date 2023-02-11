@@ -19,6 +19,8 @@ mysqli_query($db, $query);
 // cek data
 if ($query) {
 
+    // $response = $query
+
     $response = array(
         'status'            => true,
         'message'           => "Data successfully added",

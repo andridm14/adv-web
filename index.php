@@ -97,7 +97,7 @@ $data = select("SELECT * FROM tb_servis INNER JOIN user ON tb_servis.id_user = u
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        </div>
+        </div><hr>
     </div>
 </div>
 <!-- Recent Index End -->
@@ -108,7 +108,7 @@ $data = select("SELECT * FROM tb_servis INNER JOIN user ON tb_servis.id_user = u
         <div class="col-sm-12 col-xl-6">
             <div class="bg-light text-center rounded p-4">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0">Worldwide Sales</h6>
+                    <h6 class="mb-0">Service Day</h6>
                     <a href="">Show All</a>
                 </div>
                 <canvas id="worldwide-sales"></canvas>
@@ -117,7 +117,7 @@ $data = select("SELECT * FROM tb_servis INNER JOIN user ON tb_servis.id_user = u
         <div class="col-sm-12 col-xl-6">
             <div class="bg-light text-center rounded p-4">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0">Salse & Revenue</h6>
+                    <h6 class="mb-0">Service Work</h6>
                     <a href="">Show All</a>
                 </div>
                 <canvas id="salse-revenue"></canvas>

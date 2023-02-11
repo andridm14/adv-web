@@ -34,7 +34,24 @@ function tambah_user($post)
 
     return mysqli_affected_rows($db);
 }
+function tambah_car($post)
+{
 
+    global $db;
+
+    $stnk       = $post['stnk'];
+    $id_user    = $post['id_user'];
+    $model      = $post['model'];
+    $warna      = $post['warna'];
+    $tahun      = $post['tahun'];
+    
+    //query add
+    $query = "INSERT INTO tb_kendaraan VALUES('$stnk', '$id_user', '$model', '$warna', '$tahun')";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+}
 //Tambah servis customer 1 /ok
 function tambahData($post)
 {
@@ -54,8 +71,24 @@ function tambahData($post)
 
     return mysqli_affected_rows($db);
 }
+//Tambah saran 2 /ok
+function tambahSrn($post)
+{
 
-//Tambah pengerjaan 2 /ok
+    global $db;
+
+    $id_servis   = $post['id_servis'];
+    $stnk        = $post['stnk'];
+    $saran       = $post['saran'];
+    
+    //query add
+    $query = "INSERT INTO tb_saran VALUES (null, '$id_servis', $stnk , '$saran')";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+}
+//Tambah pengerjaan 3 /ok
 function tambahPgj($post)
 {
 
@@ -74,31 +107,25 @@ function tambahPgj($post)
     return mysqli_affected_rows($db);
 }
 
-//Tambah saran 3 /ok
-function tambahSrn($post)
+//delete 0 data saran /
+function delete_saran($id_saran) 
 {
-
     global $db;
 
-    $id_servis      = $post['id_servis'];
-    $saran_at       = $post['saran_at'];
-    $saran_n        = $post['saran_n'];
-    
-    //query add
-    $query = "INSERT INTO tb_saran VALUES (null, '$id_servis', '$saran_at', '$saran_n')";
+    //query
+    $query = "DELETE FROM tb_saran WHERE id_saran=$id_saran";
 
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
 }
-
-//delete 0 data user /
-function delete_user($id_user) 
+//delete 1 data pgj /
+function delete_pgj($id_pgj) 
 {
     global $db;
 
     //query
-    $query = "DELETE FROM user WHERE id_user=$id_user";
+    $query = "DELETE FROM tb_pengerjaan WHERE id_pgj=$id_pgj";
 
     mysqli_query($db, $query);
 
@@ -142,8 +169,23 @@ function update_servis($post)
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
+//update 2 saran /ok
+function update_saran($post)
+{
+    global $db;
 
-//update 2 pengerjaan /ok
+    $id_saran       = $post['id_saran'];
+    $id_servis      = $post['id_servis'];
+    $stnk           = $post['stnk'];
+    $saran          = $post['saran'];
+
+    //query update
+    $query = "UPDATE tb_saran SET id_servis='$id_servis', stnk='$stnk', saran='$saran' WHERE id_saran = $id_saran";
+
+    mysqli_query($db, $query);
+    return mysqli_affected_rows($db);
+}
+//update 3 pengerjaan /ok
 function update_pgj($post)
 {
     global $db;
@@ -160,19 +202,4 @@ function update_pgj($post)
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
 }
-//update 3 saran /ok
-function update_saran($post)
-{
-    global $db;
 
-    $id_saran       = $post['id_saran'];
-    $id_servis      = $post['id_servis'];
-    $saran_at       = $post['saran_at'];
-    $saran_n        = $post['saran_n'];
-
-    //query update
-    $query = "UPDATE tb_saran SET id_servis='$id_servis', saran_at='$saran_at', saran_n='$saran_n' WHERE id_saran = $id_saran";
-
-    mysqli_query($db, $query);
-    return mysqli_affected_rows($db);
-}

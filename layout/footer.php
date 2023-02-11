@@ -49,6 +49,7 @@
         $('#TablePgj').DataTable();
         $('#TableSaran').DataTable();
         $('#tablePkb').DataTable();
+        $('#kenTable').DataTable();
     });
 
     //title

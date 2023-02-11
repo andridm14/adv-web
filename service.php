@@ -67,9 +67,9 @@ if (isset($_POST['tambahData'])) {
                             <td><?= $dt['jenis_servis']; ?></td>
                             <td><?= $dt['keluhan']; ?></td>
                             <td>
-                                <a class="btn btn-sm btn-info mb-2" href="detService.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-search"></i></a>
+                                <a class="btn btn-sm btn-info mb-2" href="servisDetail.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-search"></i></a>
 
-                                <a class="btn btn-sm btn-warning" href="editServis.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-sm btn-warning" href="servisEdit.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-edit"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

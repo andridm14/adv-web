@@ -61,9 +61,11 @@ include 'config/app.php';
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="service.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Service</a>
-                    <a href="pkb.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>PKB</a>
-                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Laporan</a>
+                    <a href="service.php" class="nav-item nav-link"><i class="fa fa-list me-2"></i>Kelola Service</a>
+                    <a href="pengecekan.php" class="nav-item nav-link"><i class="fa fa-gear me-2"></i>Pengecekkan</a>
+                    <a href="pengerjaan.php" class="nav-item nav-link"><i class="fa fa-car me-2"></i>Pengerjaan</a>
+                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-clipboard me-2"></i>Laporan</a>
+                    <a href="customer.php" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Data Customer</a>
                 </div>
             </nav>
         </div>
