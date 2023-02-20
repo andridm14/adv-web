@@ -4,9 +4,8 @@ header('content-Type: application/json');
 
 require '../config/app.php';
 
-$query = select("SELECT * FROM tb_saran 
-INNER JOIN tb_servis ON tb_saran.id_saran=tb_servis.id_servis
-INNER JOIN tb_pengerjaan ON tb_servis.id_servis=tb_pengerjaan.id_servis WHERE tb_servis.id_servis");
+$query = select("SELECT * FROM tb_saran INNER JOIN tb_servis ON tb_saran.id_servis = tb_servis.id_servis
+INNER JOIN user ON tb_servis.id_user = user.id_user");
 
 // $query = select("SELECT * FROM tb_servis
 // INNER JOIN tb_pengerjaan ON tb_servis.id_servis=tb_pengerjaan.id_servis

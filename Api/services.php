@@ -9,11 +9,13 @@ $query = select("SELECT * FROM tb_servis");
 // cek data
 if ($query) {
 
-    $response = array(
-        'status'            => true,
-        'message'           => "Data GET Success",
-        'data service'      => $query
-    );
+    $response = $query;
+    
+    // $response = array(
+    //     'status'            => true,
+    //     'message'           => "Data GET Success",
+    //     'data service'      => $query
+    // );
 } else {
     $response = array(
         'status'    => false,

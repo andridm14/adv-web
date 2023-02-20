@@ -132,6 +132,19 @@ function delete_pgj($id_pgj)
     return mysqli_affected_rows($db);
 }
 
+// delete user
+function delete_user($id_user)
+{
+    global $db;
+
+    //query
+    $query = "DELETE FROM user WHERE id_user=$id_user";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+}
+
 //update 0 data users /ok
 function update_users($post)
 {

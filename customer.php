@@ -12,7 +12,7 @@ include 'layout/header.php';
 
 $datas = select("SELECT * FROM user WHERE user.role='2'");
 
-$dataken = select("SELECT * FROM tb_kendaraan");
+$dataken = select("SELECT * FROM tb_kendaraan INNER JOIN user ON tb_kendaraan.id_user = user.id_user");
 
 if (isset($_POST['tambahUser'])) {
     if (tambah_user($_POST) > 0) {
@@ -103,6 +103,7 @@ if (isset($_POST['tambahCar'])) {
                     <tr class="text-dark">
                         <th scope="col"></th>
                         <th scope="col">ID User</th>
+                        <th scope="col">Nama User</th>
                         <th scope="col">No. STNK</th>
                         <th scope="col">Model Kendaraan</th>
                         <th scope="col">Warna Kendaraan</th>
@@ -115,6 +116,7 @@ if (isset($_POST['tambahCar'])) {
                         <tr>
                             <td><input class="form-check-input" type="checkbox"></td>
                             <td><?= $dk['id_user']; ?></td>
+                            <td><?= $dk['nm_user']; ?></td>
                             <td><?= $dk['stnk']; ?></td>
                             <td><?= $dk['model']; ?></td>
                             <td><?= $dk['warna']; ?></td>
