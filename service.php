@@ -59,7 +59,7 @@ if (isset($_POST['tambahData'])) {
                 <tbody>
                     <?php foreach ($data as $dt) : ?>
                         <tr>
-                            <td><input class="form-check-input" type="checkbox"></td>
+                            <td><a class="btn btn-sm btn-outline-info" href="servisDetail.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-search"></i></a></td>
                             <td><?= $dt['id_servis']; ?></td>
                             <td><?= $dt['stnk']; ?></td>
                             <td><?= $dt['nm_user']; ?></td>
@@ -67,9 +67,9 @@ if (isset($_POST['tambahData'])) {
                             <td><?= $dt['jenis_servis']; ?></td>
                             <td><?= $dt['keluhan']; ?></td>
                             <td>
-                                <a class="btn btn-sm btn-info mb-2" href="servisDetail.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-search"></i></a>
+                                <a class="btn btn-sm btn-warning mb-2" href="servisEdit.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-edit"></i></a>
 
-                                <a class="btn btn-sm btn-warning" href="servisEdit.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-sm btn-danger" href="serviceDelete.php?id_servis=<?= $dt['id_servis']; ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -165,15 +165,6 @@ if (isset($_POST['tambahData'])) {
     </div>
 </div>
 
-<!-- Blank Start -->
-<!-- <div class="container-fluid pt-4 px-4">
-    <div class="row bg-light rounded align-items-center justify-content-center mx-0">
-        
-        <div class="col-md-6 text-center">
-        </div>
-    </div>
-</div> -->
-<!-- Blank End -->
 
 
 <?php

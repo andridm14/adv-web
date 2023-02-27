@@ -131,6 +131,18 @@ function delete_pgj($id_pgj)
 
     return mysqli_affected_rows($db);
 }
+//delete 0 data saran /
+function delete_servis($id_servis) 
+{
+    global $db;
+
+    //query
+    $query = "DELETE FROM tb_servis WHERE id_servis=$id_servis";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+}
 
 // delete user
 function delete_user($id_user)
